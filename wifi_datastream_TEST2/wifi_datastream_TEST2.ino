@@ -19,7 +19,7 @@ SoftwareSerial nss(3,2);
 COZIR czr(nss);
 
 // Define the strings for our datastream IDs
-char sensorId[] = "sensor_reading";
+char sensorId[] = "C02_5SW";
 CosmDatastream datastreams[] = {
   CosmDatastream(sensorId, strlen(sensorId), DATASTREAM_FLOAT),
 };
@@ -39,7 +39,7 @@ void setup() {
   czr.SetOperatingMode(CZR_POLLING);
   Serial.println("DEBUG - CZR POLLING MODE");
   Serial.println();
-  
+    
   Serial.println("Starting single datastream upload to Cosm...");
   Serial.println();
 
@@ -73,7 +73,7 @@ void loop() {
   Serial.println(ret);
 
   Serial.println();
-  delay(5000);
+  delay(60000);
 }
 
 void printWifiStatus() {
